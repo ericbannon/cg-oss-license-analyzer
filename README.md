@@ -1,0 +1,1 @@
+# cg-oss-license-analyzer
