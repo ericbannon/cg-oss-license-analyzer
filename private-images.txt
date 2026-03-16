@@ -1,0 +1,8 @@
+cgr.dev/<your-cgr.dev-org>/chainguard-base:latest
+cgr.dev/<your-cgr.dev-org>/prometheus-alertmanager:latest
+cgr.dev/<your-cgr.dev-org>/jdk:latest
+cgr.dev/<your-cgr.dev-org>/jre:latest
+cgr.dev/<your-cgr.dev-org>/open-liberty:latest
+cgr.dev/<your-cgr.dev-org>/python:latest
+cgr.dev/<your-cgr.dev-org>/envoy:latest
+cgr.dev/<your-cgr.dev-org>/node:latest
