@@ -1,8 +1,10 @@
 # SBOM APK License Analyzer
 
-It reads the SPDX or CycloneDX SBOM for each image, filters to `pkg:apk/...` packages, and uses the **license fields already declared in the SBOM** for those APKs.
+This script looks at container images in cgr.dev, pulls their SBOM attestations, and extracts the open source licenses tied to the APK OS packages included in the image. It can process a list of images and produces CSV reports showing which packages and licenses appear in each one. The reports make it easy to see the OSS licenses present across your images so they can be reviewed for open source compliance.
 
 ## What it does
+
+It reads the SPDX or CycloneDX SBOM for each image, filters to pkg:apk/... packages, and uses the license fields already declared in the SBOM for those APKs.
 
 - downloads image SBOM attestations with `cosign`
 - supports private `cgr.dev/<org>/<image>:<tag>` images
