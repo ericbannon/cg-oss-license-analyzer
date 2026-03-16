@@ -1,0 +1,24 @@
+apk_license_check:
+  stage: test
+  image: python:3.11
+
+  script:
+    - python3 apk_repo_license_analyzer.py \
+        --repo-list repos.txt \
+        --arches x86_64 \
+        --details-csv repo-package-license-details.csv
+
+    - python3 dockerfile_apk_license_check.py \
+        --dockerfile Dockerfile \
+        --repo-details-csv repo-package-license-details.csv \
+        --arch x86_64 \
+        --output-csv dockerfile-apk-license-report.csv \
+        --output-json dockerfile-apk-license-report.json \
+        --fail-on-license-regex '^AGPL-3.0'
+
+  artifacts:
+    when: always
+    paths:
+      - repo-package-license-details.csv
+      - dockerfile-apk-license-report.csv
+      - dockerfile-apk-license-report.json

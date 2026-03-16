@@ -1,0 +1,2 @@
+https://apk.cgr.dev/chainguard
+https://packages.wolfi.dev/os
